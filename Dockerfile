@@ -4,8 +4,8 @@ FROM php:7.4-apache
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy all files to container
-COPY . /var/www/html
+# Copy composer files first for caching
+COPY composer.json composer.lock ./
 
 # Install system dependencies & PHP extensions
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -19,8 +19,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install PHP dependencies via Composer
+# Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
+
+# Copy the rest of the application
+COPY . /var/www/html
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html \
+ && chmod -R 755 /var/www/html
 
 # Configure Apache for Laravel
 RUN echo '<VirtualHost *:80>' > /etc/apache2/sites-available/000-default.conf \
@@ -32,9 +39,6 @@ RUN echo '<VirtualHost *:80>' > /etc/apache2/sites-available/000-default.conf \
  && echo '    ErrorLog ${APACHE_LOG_DIR}/error.log' >> /etc/apache2/sites-available/000-default.conf \
  && echo '    CustomLog ${APACHE_LOG_DIR}/access.log combined' >> /etc/apache2/sites-available/000-default.conf \
  && echo '</VirtualHost>' >> /etc/apache2/sites-available/000-default.conf
-
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 
 # Expose Apache port
 EXPOSE 80
