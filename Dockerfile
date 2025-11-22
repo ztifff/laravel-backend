@@ -1,9 +1,10 @@
-# PHP 7.4 + Apache
-FROM php:7.4-apache
+# PHP 8.1 + Apache
+FROM php:8.1-apache
 
 # Set working directory
 WORKDIR /var/www/html
 
+# Copy application code
 COPY . /var/www/html
 
 # Install system dependencies & PHP extensions
@@ -33,7 +34,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Install Laravel dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Apache config
+# Apache config for Laravel public directory
 RUN echo '<VirtualHost *:80>' > /etc/apache2/sites-available/000-default.conf \
  && echo '    DocumentRoot /var/www/html/public' >> /etc/apache2/sites-available/000-default.conf \
  && echo '    <Directory /var/www/html/public>' >> /etc/apache2/sites-available/000-default.conf \
@@ -47,6 +48,8 @@ RUN echo '<VirtualHost *:80>' > /etc/apache2/sites-available/000-default.conf \
 # Permissions
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 
+# Expose port
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+# Use Laravel built-in server with dynamic port for Railway
+CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
