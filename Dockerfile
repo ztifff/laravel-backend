@@ -1,54 +1,30 @@
-# PHP 8.3 + Apache
+# PHP 7.4 + Apache
 FROM php:7.4-apache
 
-# Set working directory
 WORKDIR /var/www/html
 
-COPY . /var/www/html
-
-# Install system dependencies & PHP extensions
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    git \
-    curl \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip \
-    libzip-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    default-mysql-client \
-    nodejs \
-    npm \
- && docker-php-ext-configure gd --with-freetype --with-jpeg \
- && docker-php-ext-install pdo_mysql mysqli mbstring exif pcntl bcmath gd zip \
- && a2enmod rewrite \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y \
+    git curl zip unzip libzip-dev \
+    libpng-dev libonig-dev libxml2-dev \
+    nodejs npm \
+ && docker-php-ext-install pdo_mysql mbstring zip exif pcntl bcmath gd \
+ && a2enmod rewrite
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Verify Composer installation
-RUN /usr/local/bin/composer --version
+# Fix Apache warning (optional)
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-# Configure Apache for Laravel
-RUN echo '<VirtualHost *:80>' > /etc/apache2/sites-available/000-default.conf \
- && echo '    DocumentRoot /var/www/html/public' >> /etc/apache2/sites-available/000-default.conf \
- && echo '    <Directory /var/www/html/public>' >> /etc/apache2/sites-available/000-default.conf \
- && echo '        AllowOverride All' >> /etc/apache2/sites-available/000-default.conf \
- && echo '        Require all granted' >> /etc/apache2/sites-available/000-default.conf \
- && echo '    </Directory>' >> /etc/apache2/sites-available/000-default.conf \
- && echo '    ErrorLog ${APACHE_LOG_DIR}/error.log' >> /etc/apache2/sites-available/000-default.conf \
- && echo '    CustomLog ${APACHE_LOG_DIR}/access.log combined' >> /etc/apache2/sites-available/000-default.conf \
- && echo '</VirtualHost>' >> /etc/apache2/sites-available/000-default.conf
+# Copy project files
+COPY . /var/www/html
 
-# Permissions for Apache
-RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
+# Install dependencies
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Expose Apache port
+# Apache permissions
+RUN chown -R www-data:www-data /var/www/html \
+ && chmod -R 755 /var/www/html
+
 EXPOSE 80
-
-# Start Apache
 CMD ["apache2-foreground"]
