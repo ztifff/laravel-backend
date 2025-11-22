@@ -2,9 +2,9 @@
 FROM php:7.4-apache
 
 # Set working directory
-WORKDIR /var/www/html
+WORKDIR /var/www/html/src
 
-COPY . /var/www/html
+COPY . /var/www/html/src
 
 # Install system dependencies & PHP extensions
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -45,7 +45,7 @@ RUN echo '<VirtualHost *:80>' > /etc/apache2/sites-available/000-default.conf \
  && echo '</VirtualHost>' >> /etc/apache2/sites-available/000-default.conf
 
 # Permissions for Apache
-RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
+RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html/src
 
 # Expose Apache port
 EXPOSE 80
