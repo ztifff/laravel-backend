@@ -1,9 +1,10 @@
 # PHP 7.4 + Apache
 FROM php:7.4-apache
 
+# Set working directory
 WORKDIR /var/www/html
 
-# Copy all files first
+# Copy entire app first
 COPY . /var/www/html
 
 # Install system dependencies & PHP extensions
@@ -36,6 +37,8 @@ RUN echo '<VirtualHost *:80>' > /etc/apache2/sites-available/000-default.conf \
  && echo '    CustomLog ${APACHE_LOG_DIR}/access.log combined' >> /etc/apache2/sites-available/000-default.conf \
  && echo '</VirtualHost>' >> /etc/apache2/sites-available/000-default.conf
 
+# Expose Apache port
 EXPOSE 80
 
+# Start Apache
 CMD ["apache2-foreground"]
