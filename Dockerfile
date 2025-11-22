@@ -33,9 +33,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Verify Composer installation
 RUN /usr/local/bin/composer --version
 
-# Install Node.js already present, then Railway CLI
-RUN npm install -g @railway/cli
-
 # Configure Apache for Laravel
 RUN echo '<VirtualHost *:80>' > /etc/apache2/sites-available/000-default.conf \
  && echo '    DocumentRoot /var/www/html/public' >> /etc/apache2/sites-available/000-default.conf \
