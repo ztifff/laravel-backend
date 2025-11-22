@@ -4,6 +4,8 @@ FROM php:7.4-apache
 # Set working directory
 WORKDIR /var/www/html
 
+COPY . /var/www/html
+
 # Install system dependencies & PHP extensions
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
