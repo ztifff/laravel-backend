@@ -30,11 +30,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Verify Composer installation
-RUN /usr/local/bin/composer --version
-
-# Install Node.js already present, then Railway CLI
-RUN npm install -g @railway/cli
+# Install PHP dependencies
+RUN composer install --no-dev --optimize-autoloader
 
 # Configure Apache for Laravel
 RUN echo '<VirtualHost *:80>' > /etc/apache2/sites-available/000-default.conf \
