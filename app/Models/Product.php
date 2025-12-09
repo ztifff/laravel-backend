@@ -33,7 +33,9 @@ class Product extends Model
      */
     public function getImageUrlAttribute()
     {
-        // Assumes images are stored in storage/app/public/images/...
-        return url('storage/' . $this->image);
+        // remove leading slash if it exists
+    $cleanPath = ltrim($this->image, '/');
+
+    return url('storage/' . $cleanPath);
     }
 }
