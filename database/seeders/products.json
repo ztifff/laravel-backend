@@ -1,0 +1,474 @@
+[
+  {
+    "id": 1,
+    "name": "Akaza Hoodie",
+    "price": 1099,
+    "image": "/images/Apparel/akaza hoodie.jpg",
+    "category": "Apparel",
+    "description": "Stylish black hoodie inspired by Akaza’s demon design — soft cotton blend."
+  },
+  {
+    "id": 2,
+    "name": "Albedo Backpack",
+    "price": 899,
+    "image": "/images/Apparel/albedo backpack.jpg",
+    "category": "Apparel",
+    "description": "Durable anime-themed backpack featuring Albedo’s sigil — roomy and lightweight."
+  },
+  {
+    "id": 3,
+    "name": "Alhaitham T-Shirt",
+    "price": 599,
+    "image": "/images/Apparel/alhaitham t-shirt.jpg",
+    "category": "Apparel",
+    "description": "Comfort-fit graphic tee with Alhaitham artwork — perfect for casual wear."
+  },
+  {
+    "id": 104,
+    "name": "Bucket Hat",
+    "price": 499,
+    "image": "/images/Apparel/bucket hat.jpg",
+    "category": "Apparel",
+    "description": "Trendy bucket hat with minimalist anime embroidery — one size fits all."
+  },
+  {
+    "id": 5,
+    "name": "Cyno Shoulder Bag",
+    "price": 849,
+    "image": "/images/Apparel/cyno shoulder bag.jpg",
+    "category": "Apparel",
+    "description": "Compact shoulder bag inspired by Cyno — features adjustable strap and inner pocket."
+  },
+  {
+    "id": 6,
+    "name": "Demon Slayer Hoodie",
+    "price": 1199,
+    "image": "/images/Apparel/demon slayer hoodie.jpg",
+    "category": "Apparel",
+    "description": "Soft fleece hoodie featuring Demon Slayer patterns — unisex design."
+  },
+  {
+    "id": 7,
+    "name": "Diluc Handbag",
+    "price": 999,
+    "image": "/images/Apparel/diluc handbag.jpg",
+    "category": "Apparel",
+    "description": "Elegant anime-themed handbag inspired by Diluc — perfect for everyday use."
+  },
+  {
+    "id": 8,
+    "name": "Klee T-Shirt",
+    "price": 599,
+    "image": "/images/Apparel/klee t-shirt.jpg",
+    "category": "Apparel",
+    "description": "Playful Klee graphic tee — bright colors and soft fabric for comfort."
+  },
+  {
+    "id": 9,
+    "name": "Studio Ghibli Cap",
+    "price": 549,
+    "image": "/images/Apparel/studio ghibli cap.jpg",
+    "category": "Apparel",
+    "description": "Classic baseball cap embroidered with Studio Ghibli motifs — adjustable fit."
+  },
+  {
+    "id": 10,
+    "name": "Trafalgar Law Hoodie",
+    "price": 1249,
+    "image": "/images/Apparel/trafalgar law hoodie.jpg",
+    "category": "Apparel",
+    "description": "High-quality hoodie featuring Trafalgar Law’s signature emblem."
+  },
+  {
+    "id": 11,
+    "name": "Captain America Earrings",
+    "price": 299,
+    "image": "/images/Accessories/captain america earrings.jpg",
+    "category": "Accessories",
+    "description": "Stylish Captain America shield earrings — lightweight and perfect for fans."
+  },
+  {
+    "id": 12,
+    "name": "Diluc Badge Pin",
+    "price": 199,
+    "image": "/images/Accessories/diluc badge pin.jpg",
+    "category": "Accessories",
+    "description": "High-quality metal badge featuring Diluc’s crest — ideal for bags or jackets."
+  },
+  {
+    "id": 13,
+    "name": "Genshin Pin",
+    "price": 249,
+    "image": "/images/Accessories/genshin pin.jpg",
+    "category": "Accessories",
+    "description": "Cute enamel pin featuring iconic Genshin Impact designs — collectible and durable."
+  },
+  {
+    "id": 14,
+    "name": "Haikyuu Badge (Random)",
+    "price": 149,
+    "image": "/images/Accessories/haikyuu badge random.jpg",
+    "category": "Accessories",
+    "description": "Surprise Haikyuu badge — random character design, perfect for collectors."
+  },
+  {
+    "id": 15,
+    "name": "Jujutsu Kaisen Badge (Random)",
+    "price": 149,
+    "image": "/images/Accessories/jujutsu kaisen badge random.jpg",
+    "category": "Accessories",
+    "description": "Random Jujutsu Kaisen badge featuring your favorite sorcerers."
+  },
+  {
+    "id": 16,
+    "name": "Marvel Mini Backpack Charm",
+    "price": 399,
+    "image": "/images/Accessories/marvel mini backpack charm.jpg",
+    "category": "Accessories",
+    "description": "Mini backpack charm inspired by Marvel heroes — fun and collectible keychain."
+  },
+  {
+    "id": 17,
+    "name": "My Neighbor Totoro Wallet",
+    "price": 699,
+    "image": "/images/Accessories/my neighbore totoro wallet.jpg",
+    "category": "Accessories",
+    "description": "Adorable Totoro-themed wallet with multiple compartments — soft PU leather."
+  },
+  {
+    "id": 18,
+    "name": "One Piece Bracelet",
+    "price": 249,
+    "image": "/images/Accessories/one piece bracelet.jpg",
+    "category": "Accessories",
+    "description": "Adjustable bracelet featuring One Piece motifs — great for everyday wear."
+  },
+  {
+    "id": 19,
+    "name": "Hange Zoe Figure",
+    "price": 1299,
+    "image": "/images/Figures & Collectibles/hange zoe.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Detailed Hange Zoe collectible figure with stand — a must-have for Attack on Titan fans."
+  },
+  {
+    "id": 20,
+    "name": "Ike Eveland Figure",
+    "price": 1199,
+    "image": "/images/Figures & Collectibles/ike eveland.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Charming figure of Ike Eveland — crafted with care for Nijisanji EN collectors."
+  },
+  {
+    "id": 21,
+    "name": "Kenma Kozume Figure",
+    "price": 1399,
+    "image": "/images/Figures & Collectibles/kenma kozume.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Realistic Kenma Kozume figure from Haikyuu!! with detailed uniform sculpt."
+  },
+  {
+    "id": 22,
+    "name": "Kento Nanami Figure",
+    "price": 1499,
+    "image": "/images/Figures & Collectibles/kento nanami.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Elegant Kento Nanami figure from Jujutsu Kaisen — includes base and weapon accessories."
+  },
+  {
+    "id": 23,
+    "name": "Luffy Figure",
+    "price": 1299,
+    "image": "/images/Figures & Collectibles/luffy.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Dynamic Monkey D. Luffy action figure in battle pose — great for display."
+  },
+  {
+    "id": 24,
+    "name": "Misa Amane Figure",
+    "price": 1099,
+    "image": "/images/Figures & Collectibles/misa amane.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Stylish Death Note figure of Misa Amane featuring her signature gothic outfit."
+  },
+  {
+    "id": 25,
+    "name": "Natasha Romanoff Figure",
+    "price": 1499,
+    "image": "/images/Figures & Collectibles/natasha romanoff.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Marvel’s Black Widow collectible figure — detailed sculpt and action-ready design."
+  },
+  {
+    "id": 26,
+    "name": "Osamu Dazai Figure",
+    "price": 1399,
+    "image": "/images/Figures & Collectibles/osamu dazai.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Bungou Stray Dogs’ Osamu Dazai in his signature outfit — finely painted details."
+  },
+  {
+    "id": 27,
+    "name": "Pochita Figure",
+    "price": 899,
+    "image": "/images/Figures & Collectibles/pochita.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Adorable Pochita figure from Chainsaw Man — small, cute, and perfectly crafted."
+  },
+  {
+    "id": 28,
+    "name": "Raiden Shogun Figure",
+    "price": 1599,
+    "image": "/images/Figures & Collectibles/raiden shogun.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Highly detailed Raiden Shogun figure from Genshin Impact with weapon and base."
+  },
+  {
+    "id": 29,
+    "name": "Sakura Haruno Figure",
+    "price": 1299,
+    "image": "/images/Figures & Collectibles/sakura haruno.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Naruto’s Sakura Haruno action figure — beautifully painted with dynamic pose."
+  },
+  {
+    "id": 30,
+    "name": "Sawako Kuronuma Figure",
+    "price": 999,
+    "image": "/images/Figures & Collectibles/sawako kuronuma.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Delicate Sawako Kuronuma collectible — charming expression and pastel color scheme."
+  },
+  {
+    "id": 31,
+    "name": "Shu Yamino Figure",
+    "price": 1199,
+    "image": "/images/Figures & Collectibles/shu yamino.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Stylized figure of Shu Yamino — detailed clothing and facial sculpt for fans of NIJISANJI."
+  },
+  {
+    "id": 32,
+    "name": "Takashi Mitsuya Figure",
+    "price": 1399,
+    "image": "/images/Figures & Collectibles/takashi mitsuya.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Tokyo Revengers Takashi Mitsuya collectible figure — clean sculpt and pose."
+  },
+  {
+    "id": 33,
+    "name": "Tengen Uzui Figure",
+    "price": 1599,
+    "image": "/images/Figures & Collectibles/tengen uzui.jpg",
+    "category": "Figures & Collectibles",
+    "description": "Limited edition Tengen Uzui figure from Demon Slayer — comes with dual swords display."
+  },
+  {
+    "id": 34,
+    "name": "Tobio Kageyama Figure",
+    "price": 1299,
+    "image": "/images/Figures & Collectibles/tobio kageyama.jpg",
+    "category": "Figures & Collectibles",
+    "description": "High-quality Tobio Kageyama figure from Haikyuu!! in a dynamic volleyball pose."
+  },
+  {
+    "id": 35,
+    "name": "Naruto & Sasuke Coffee Mug",
+    "price": 399,
+    "image": "/images/Home & Lifestyle/naruto sasuke coffee mug.jpg",
+    "category": "Home & Lifestyle",
+    "description": "Ceramic coffee mug featuring Naruto and Sasuke — durable, dishwasher-safe, and perfect for anime fans."
+  },
+  {
+    "id": 36,
+    "name": "Nezuko Pillow",
+    "price": 699,
+    "image": "/images/Home & Lifestyle/nezuko pillow.jpg",
+    "category": "Home & Lifestyle",
+    "description": "Soft plush pillow with Nezuko design — perfect for comfort and display."
+  },
+  {
+    "id": 37,
+    "name": "Death Note Notebook",
+    "price": 499,
+    "image": "/images/Stationery & School Supplies/death note notebook.jpg",
+    "category": "Stationery & School Supplies",
+    "description": "Replica Death Note notebook — includes realistic ruled pages and cover design for fans and collectors."
+  },
+  {
+    "id": 38,
+    "name": "Pochacco Ballpoint Pen",
+    "price": 199,
+    "image": "/images/Stationery & School Supplies/pochacco ballpoint pen.jpg",
+    "category": "Stationery & School Supplies",
+    "description": "Cute Pochacco-themed ballpoint pen — smooth ink flow, perfect for everyday writing."
+  },
+  {
+    "id": 39,
+    "name": "Spy x Family School Bag",
+    "price": 899,
+    "image": "/images/Stationery & School Supplies/spy x family school bag.jpg",
+    "category": "Stationery & School Supplies",
+    "description": "Stylish and durable Spy x Family school bag — spacious and comfortable for daily use."
+  },
+  {
+    "id": 40,
+    "name": "Studio Ghibli Notebook",
+    "price": 299,
+    "image": "/images/Stationery & School Supplies/studio ghibli notebook.jpg",
+    "category": "Stationery & School Supplies",
+    "description": "Lined notebook featuring Studio Ghibli artwork — ideal for journaling or sketching."
+  },
+  {
+    "id": 41,
+    "name": "Tokyo Revengers Pen",
+    "price": 179,
+    "image": "/images/Stationery & School Supplies/tokyo revengers pen.jpg",
+    "category": "Stationery & School Supplies",
+    "description": "Sleek pen inspired by Tokyo Revengers — smooth black ink and ergonomic grip."
+  },
+  {
+    "id": 42,
+    "name": "Assassination Classroom Poster",
+    "price": 299,
+    "image": "/images/Posters & Wall Art/assassination classroom.jpg",
+    "category": "Posters & Wall Art",
+    "description": "Vibrant wall poster featuring the iconic Assassination Classroom cast — printed on high-quality glossy paper."
+  },
+  {
+    "id": 43,
+    "name": "Blue Lock Poster",
+    "price": 349,
+    "image": "/images/Posters & Wall Art/bluelock.jpg",
+    "category": "Posters & Wall Art",
+    "description": "High-resolution Blue Lock poster — perfect for sports anime fans and room decor."
+  },
+  {
+    "id": 44,
+    "name": "Chainsaw Man Poster",
+    "price": 349,
+    "image": "/images/Posters & Wall Art/chainsawman.jpg",
+    "category": "Posters & Wall Art",
+    "description": "Stylish Chainsaw Man poster with dynamic Denji artwork — bold colors and durable print."
+  },
+  {
+    "id": 45,
+    "name": "Dr. Stone Poster",
+    "price": 329,
+    "image": "/images/Posters & Wall Art/dr.stone.jpg",
+    "category": "Posters & Wall Art",
+    "description": "Educational and inspiring Dr. Stone wall art — perfect for science and anime lovers alike."
+  },
+  {
+    "id": 46,
+    "name": "Given Poster",
+    "price": 299,
+    "image": "/images/Posters & Wall Art/given.jpg",
+    "category": "Posters & Wall Art",
+    "description": "Beautiful Given poster featuring the band — soft colors ideal for bedroom or music room display."
+  },
+  {
+    "id": 47,
+    "name": "Horimiya Poster",
+    "price": 299,
+    "image": "/images/Posters & Wall Art/horimiya.jpg",
+    "category": "Posters & Wall Art",
+    "description": "Romantic Horimiya poster — perfect for fans of the heartwarming slice-of-life series."
+  },
+  {
+    "id": 48,
+    "name": "Ouran High School Host Club Poster",
+    "price": 319,
+    "image": "/images/Posters & Wall Art/ouran host club.jpg",
+    "category": "Posters & Wall Art",
+    "description": "Bright and colorful Ouran Host Club poster — captures the fun and charm of the classic series."
+  },
+  {
+    "id": 49,
+    "name": "Saiki K. Poster",
+    "price": 299,
+    "image": "/images/Posters & Wall Art/saiki.jpg",
+    "category": "Posters & Wall Art",
+    "description": "Funny and expressive Saiki Kusuo no Psi-nan poster — adds humor and color to any room."
+  },
+  {
+    "id": 50,
+    "name": "8BitDo 2.4G Wireless Controller – Chongyun Edition",
+    "price": 2899,
+    "image": "/images/Limited Edition - Exclusives/8BitDo 2.4G Wireless Controller Chongyun Edition.jpg",
+    "category": "Limited Edition / Exclusives",
+    "description": "Exclusive Chongyun-themed wireless controller by 8BitDo — ergonomic, responsive, and collectible."
+  },
+  {
+    "id": 51,
+    "name": "Funko Pop Jujutsu Kaisen – Satoru Gojo (Painting) Limited Edition",
+    "price": 1999,
+    "image": "/images/Limited Edition - Exclusives/Funko Pop Jujutsu Kaisen Satoru Gojo Painting Limited Edition.jpg",
+    "category": "Limited Edition / Exclusives",
+    "description": "Rare Funko Pop of Satoru Gojo in painting variant — a limited collector’s piece for Jujutsu Kaisen fans."
+  },
+  {
+    "id": 52,
+    "name": "Hatsune Miku Tumbler – Limited Edition",
+    "price": 1299,
+    "image": "/images/Limited Edition - Exclusives/Hatsune Miku Tumbler Limited Edition.jpg",
+    "category": "Limited Edition / Exclusives",
+    "description": "Stainless steel tumbler featuring Hatsune Miku — limited run with exclusive packaging."
+  },
+  {
+    "id": 53,
+    "name": "One Piece Jacket – Limited Edition",
+    "price": 2599,
+    "image": "/images/Limited Edition - Exclusives/One Piece Jacket Limited Edition.jpg",
+    "category": "Limited Edition / Exclusives",
+    "description": "Premium One Piece jacket — exclusive design with embroidered Straw Hat logo and collector’s tag."
+  },
+  {
+    "id": 54,
+    "name": "8BitDo 2.4G Wireless Controller – Chongyun Edition",
+    "price": 2799,
+    "image": "/images/Media & Games/8BitDo 2.4G Wireless Controller Chongyun Edition.jpg",
+    "category": "Media & Games",
+    "description": "Wireless controller inspired by Chongyun from Genshin Impact — ergonomic design and smooth gameplay experience."
+  },
+  {
+    "id": 55,
+    "name": "Genshin Impact Hu Tao Mechanical Keyboard",
+    "price": 4999,
+    "image": "/images/Media & Games/Genshin Impact Hu Tao Mechanical Keyboard.jpg",
+    "category": "Media & Games",
+    "description": "High-performance mechanical keyboard themed after Hu Tao — RGB backlighting and premium key switches."
+  },
+  {
+    "id": 56,
+    "name": "Genshin Impact Wanderer Headset",
+    "price": 3499,
+    "image": "/images/Media & Games/Genshin Impact Wanderer Headset.jpg",
+    "category": "Media & Games",
+    "description": "Crystal-clear audio headset inspired by Wanderer — lightweight, comfortable, and designed for gaming sessions."
+  },
+  {
+    "id": 57,
+    "name": "Honkai Star Rail Kafka Phone Case",
+    "price": 699,
+    "image": "/images/Media & Games/Honkai Star Rail Kafka Phone Case.jpg",
+    "category": "Media & Games",
+    "description": "Stylish and protective phone case featuring Kafka — slim fit with anti-scratch material."
+  },
+  {
+    "id": 58,
+    "name": "Klee Nintendo Switch Case",
+    "price": 999,
+    "image": "/images/Media & Games/Klee Nintendo Switch Case.jpg",
+    "category": "Media & Games",
+    "description": "Cute and durable Nintendo Switch protective case inspired by Klee — soft interior with extra storage slots."
+  },
+  {
+    "id": 59,
+    "name": "Xiaomi x Genshin Impact Childe Smart Watch",
+    "price": 6999,
+    "image": "/images/Media & Games/Xiaomi x Genshin Impact Childe Smart Watch.jpg",
+    "category": "Media & Games",
+    "description": "Exclusive Xiaomi smartwatch collaboration featuring Childe — vibrant display, fitness tracking, and themed interface."
+  }
+]

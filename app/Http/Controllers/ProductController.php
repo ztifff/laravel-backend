@@ -3,128 +3,110 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Support\Js;
-use Illuminate\Routing\Controller; 
 use Illuminate\Http\Request;
-
-
-// use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
-    
+    // List all products
     public function index()
     {
-        // get all products from the DB
-        $products = Product::select('id', 'name', 'inventory', 'avg_sales', 'lead_time')->get();
-
-        // return the products view
+        $products = Product::with('category')->get();
         return response()->json($products);
     }
 
+    // Show a single product
     public function show($id)
-{
-    // Find product by ID
-    $product = Product::find($id);
-
-    // If not found, return 404 response
-    if (!$product) {
-        return response()->json([
-            'message' => 'Product not found'
-        ], 404);
+    {
+        $product = Product::with('category')->find($id);
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+        return response()->json($product);
     }
 
-    // If found, return the product data as JSON
-    return response()->json($product);
-}
-
-public function store(Request $request)
+    // Create a new product
+    public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
+        $request->validate([
+            'name'        => 'required|string',
             'description' => 'nullable|string',
-            'price' => 'required|numeric',
+            'price'       => 'required|numeric',
+            'category_id' => 'required|exists:categories,id',
+            'image'       => 'nullable|image|max:2048',
         ]);
 
-        $product = Product::create($validated);
-        return response()->json($product, 201);
+        $data = $request->only(['name', 'description', 'price', 'category_id']);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $filename = time() . '_' . Str::slug($request->name) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $filename); // store in public/images
+            $data['image'] = '/images/' . $filename;
+        }
+
+        $product = Product::create($data);
+
+        return response()->json([
+            'message' => 'Product created successfully',
+            'product' => $product
+        ], 201);
     }
 
-    public function update(Request $request, Product $product)
+    // Update a product
+    public function update(Request $request, $id)
     {
-        $product->update($request->all());
-        return response()->json($product, 200);
+        $product = Product::find($id);
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        $request->validate([
+            'name'        => 'sometimes|required|string',
+            'description' => 'nullable|string',
+            'price'       => 'sometimes|required|numeric',
+            'category_id' => 'sometimes|required|exists:categories,id',
+            'image'       => 'nullable|image|max:2048',
+        ]);
+
+        $data = $request->only(['name', 'description', 'price', 'category_id']);
+
+        // Handle image upload
+        if ($request->hasFile('image')) {
+            // Delete old image if exists
+            if ($product->image && file_exists(public_path($product->image))) {
+                unlink(public_path($product->image));
+            }
+
+            $image = $request->file('image');
+            $filename = time() . '_' . Str::slug($request->name ?? $product->name) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $filename);
+            $data['image'] = '/images/' . $filename;
+        }
+
+        $product->update($data);
+
+        return response()->json([
+            'message' => 'Product updated successfully',
+            'product' => $product
+        ]);
     }
 
-    public function destroy(Product $product)
+    // Delete a product
+    public function destroy($id)
     {
+        $product = Product::find($id);
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+
+        if ($product->image && file_exists(public_path($product->image))) {
+            unlink(public_path($product->image));
+        }
+
         $product->delete();
-        return response()->json(null, 204);
+
+        return response()->json(['message' => 'Product deleted successfully']);
     }
-
-    // /**
-    //  * Show the form for creating a new resource.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Store a newly created resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  \App\Models\Product  $product
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function show(Product $product)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  *
-    //  * @param  \App\Models\Product  $product
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function edit(Product $product)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  *
-    //  * @param  \Illuminate\Http\Request  $request
-    //  * @param  \App\Models\Product  $product
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function update(Request $request, Product $product)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Remove the specified resource from storage.
-    //  *
-    //  * @param  \App\Models\Product  $product
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function destroy(Product $product)
-    // {
-    //     //
-    // }
 }
